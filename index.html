@@ -10,6 +10,9 @@
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            background: linear-gradient(45deg, #007bff, #61dafb);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
         }
 
         header {
@@ -19,6 +22,62 @@
             text-align: center;
         }
 
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        #testimonials {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .testimonial {
+            margin: 20px;
+            padding: 20px;
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            background-color: #ffffff;
+        }
+
+        .testimonial img {
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        #cta {
+            background-color: #343a40;
+            color: #ffffff;
+            text-align: center;
+            padding: 40px;
+        }
+
+        #cta h2 {
+            margin-bottom: 20px;
+        }
+
+        #footer {
+            background-color: #333;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        #footer a {
+            color: #ffffff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
         nav {
             background-color: #007BFF;
             padding: 1em;
@@ -215,7 +274,6 @@
     </section>
 
     <section id="gallery">
-        <!-- ... (previous HTML code) ... -->
         <h2 style="color: #007bff;">Image Gallery</h2>
         <div class="image-grid">
             <div class="gallery-item">
@@ -254,6 +312,34 @@
             <button type="submit" class="button">Send Message</button>
         </form>
     </section>
+
+    <section id="testimonials">
+        <h2 style="color: #ffffff;">What Our Customers Say</h2>
+        <div class="testimonial">
+            <img src="https://via.placeholder.com/50" alt="Customer 1">
+            <p>"Great service! The features provided are amazing."</p>
+            <p>- John Doe</p>
+        </div>
+        <div class="testimonial">
+            <img src="https://via.placeholder.com/50" alt="Customer 2">
+            <p>"I love the interactive elements on this website. It's user-friendly."</p>
+            <p>- Jane Smith</p>
+        </div>
+    </section>
+
+    <section id="cta">
+        <h2>Ready to Experience the Future?</h2>
+        <p>Join us now for an interactive journey. Click the button below!</p>
+        <a href="#" class="button">Get Started</a>
+    </section>
+
+    <div id="footer">
+        <p>&copy; 2023 Interactive Website. All rights reserved.</p>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact Us</a>
+    </div>
+
 
     <script>
         // Add your interactive JavaScript here
