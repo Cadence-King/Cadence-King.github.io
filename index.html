@@ -11,8 +11,8 @@
             padding: 0;
             background-color: #f4f4f4;
             background: linear-gradient(45deg, #007033, #ffffff);
-        background-size: 400% 400%;
-        animation: gradientAnimation 15s ease infinite;
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
         }
 
         header {
@@ -221,7 +221,7 @@
             cursor: pointer;
         }
 
-        #services h2,
+    #services h2,
     #testimonials h2,
     #cta h2,
     #about h2,
@@ -233,6 +233,63 @@
     #cta {
         background-color: #ffffff;
         color: #007033;
+    }
+
+    #map-container {
+        width: 100%;
+        height: 400px; /* Adjust the height as needed */
+        margin-top: 20px;
+        border: 5px solid #007033;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    #countdown-container {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    #countdown {
+        font-size: 24px;
+        color: #007033;
+    }
+
+    #newsletter-container {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    #newsletter-form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    #newsletter-email {
+        padding: 10px;
+        border: 2px solid #007033;
+        border-radius: 5px;
+        margin-right: 10px;
+    }
+
+    #newsletter-submit {
+        background-color: #007033;
+        color: #ffffff;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    #social-media-feeds {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    #social-media-feeds img {
+        width: 50px; /* Adjust as needed */
+        margin: 0 10px;
     }
 
     </style>
@@ -292,11 +349,9 @@
         </div>
     </section>
 
-
-
-    <section id="about">
-        <h2>About Us</h2>
-        <p>This is a brief description of our company or project.</p>
+    <section id="countdown-container">
+        <h2 style="color: #007033;">Event Countdown</h2>
+        <div id="countdown"></div>
     </section>
 
     <section id="gallery">
@@ -321,6 +376,40 @@
                 </div>
             </div>
         </div>
+    </section>
+
+    <section id="map">
+        <h2 style="color: #007033;">Our Location</h2>
+        <div id="map-container">
+            <!-- Replace the sample image with your actual interactive map iframe -->
+            <iframe
+                width="100%"
+                height="100%"
+                frameborder="0"
+                scrolling="no"
+                marginheight="0"
+                marginwidth="0"
+                allowfullscreen=""
+                src="https://www.google.com/maps?q=33.255190656280696,-97.15112086650629&hl=es;z%3D14&amp&output=embed" 
+            ></iframe>
+        </div>
+    </section>
+
+    <section id="newsletter-container">
+        <h2 style="color: #007033;">Subscribe to Our Newsletter</h2>
+        <form id="newsletter-form">
+            <input type="email" id="newsletter-email" placeholder="Enter your email" required>
+            <button type="button" id="newsletter-submit" onclick="subscribeNewsletter()">Subscribe</button>
+        </form>
+    </section>
+
+    <section id="social-media-feeds">
+        <h2 style="color: #007033;">Social Media Feeds</h2>
+        <!-- Placeholder images for social media feeds -->
+        <img src="https://via.placeholder.com/50" alt="Social Media Feed 1">
+        <img src="https://via.placeholder.com/50" alt="Social Media Feed 2">
+        <img src="https://via.placeholder.com/50" alt="Social Media Feed 3">
+        <!-- Add more social media feed images as needed -->
     </section>
 
     <section id="contact">
@@ -420,7 +509,54 @@
             });
         });
 
-        
+         // Set the target date for the countdown (change as needed)
+        const targetDate = new Date("December 31, 2023 23:59:59").getTime();
+
+        // Update the countdown every second
+        const countdownInterval = setInterval(updateCountdown, 1000);
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const timeRemaining = targetDate - now;
+
+            if (timeRemaining > 0) {
+                const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+                document.getElementById("countdown").innerHTML =
+                    `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            } else {
+                // Display a message when the countdown is over
+                document.getElementById("countdown").innerHTML = "Event Over!";
+                clearInterval(countdownInterval);
+            }
+        }
+
+        function subscribeNewsletter() {
+            const email = document.getElementById("newsletter-email").value;
+            // Implement your newsletter subscription logic here
+            console.log(`Subscribed with email: ${email}`);
+            // Optionally, you can reset the form after subscription
+            document.getElementById("newsletter-form").reset();
+        }
+
+
+        let scrollSpeed = 15; // Adjust the scroll speed as needed
+        let lastScrollTop = 0;
+
+        window.addEventListener('scroll', function() {
+            const st = window.pageYOffset || document.documentElement.scrollTop;
+            if (st > lastScrollTop) {
+                // Scrolling down, slow down the animation
+                document.styleSheets[0].insertRule(`@keyframes gradientAnimation {0% {background-position: 0% 50%;} 50% {background-position: 100% 50%;} 100% {background-position: 0% 50%;}}`, 0);
+            } else {
+                // Scrolling up, speed up the animation
+                document.styleSheets[0].insertRule(`@keyframes gradientAnimation {0% {background-position: 0% 50%;} 50% {background-position: 100% 50%;} 100% {background-position: 0% 50%;}}`, 0);
+            }
+            lastScrollTop = st;
+        });
     </script>
 </body>
 </html>
