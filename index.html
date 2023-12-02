@@ -3,560 +3,484 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stylish Interactive Website</title>    
+    <title>Your Vibrant Website</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            background: linear-gradient(45deg, #007033, #ffffff);
-            background-size: 400% 400%;
-            animation: gradientAnimation 15s ease infinite;
+            background-color: #f0f0f0;
+            color: #333;
         }
 
         header {
-            background-color: #007033;
-            color: #ffffff;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
             padding: 1em;
-            text-align: center;
-            text-align: center;
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        @keyframes gradientAnimation {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        #testimonials {
-            padding: 20px;
-            text-align: center;
-        }
-
-        .testimonial {
-            margin: 20px;
-            padding: 20px;
-            border: 2px solid #007033;
-            border-radius: 10px;
-            background-color: #ffffff;
-        }
-
-        .testimonial img {
-            border-radius: 50%;
-            margin-bottom: 10px;
-        }
-
-        #cta {
-            background-color: #343a40;
-            color: #ffffff;
-            text-align: center;
-            padding: 40px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        #cta h2 {
-            margin-bottom: 20px;
-        }
-
-        #footer {
-            background-color: #007033;
-            color: #ffffff;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        #footer a {
-            color: #ffffff;
-            margin: 0 10px;
-            text-decoration: none;
         }
 
         nav {
-            background-color: #004b22;
-            padding: 1em;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
+            background-color: #333;
+            color: white;
+            padding: 0.5em;
         }
 
         nav a {
+            color: white;
             text-decoration: none;
-            color: #ffffff;
-            font-weight: bold;
+            padding: 1em;
         }
 
         section {
-            padding: 20px;
+            padding: 2em;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            border-radius: 8px;
         }
 
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 16px;
-            text-align: center;
-            text-decoration: none;
-            background-color:  #007033;
-            color: #ffffff;
-            border-radius: 5px;
-            cursor: pointer;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .button:hover {
-            background-color: #014b22;
-        }
-
-        .feature-slider {
-            width: 80%;
-            margin: 0 auto;
-            overflow: hidden;
-        }
-
-        .feature-slides {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .feature-slide {
-            flex: 0 0 100%;
-            text-align: center;
-        }
-
-        .feature-slide img {
-            border-radius: 10px;
-            max-width: 100%;
-            height: auto;
-        }
-
-        .image-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .gallery-item {
+        .video-container {
             position: relative;
+            padding-bottom: 56.25%;
+            padding-top: 30px;
+            height: 0;
             overflow: hidden;
-            border: 5px solid #007033;
-            border-radius: 10px;
-            margin-bottom: 20px;
         }
 
-        .gallery-item img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        #video-container {
-            text-align: center;
-        }
-
-        #image-container {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 20px;
-            border: 5px solid #007033;
-            border-radius: 10px;
-            padding: 10px; /* Add padding for better visual */
-        }
-
-        .overlay {
+        .video-container iframe, .video-container object, .video-container embed {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
         }
 
-        .overlay p {
+        .image-container {
+            text-align: center;
+            margin-bottom: 2em;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-bottom: 2em;
+        }
+
+        .interactive-map {
+            width: 100%;
+            height: 300px;
+        }
+
+        footer {
+            background-color: #333;
             color: white;
-            font-size: 16px;
+            text-align: center;
+            padding: 1em;
+        }
+
+        .reviews-container {
+            margin: 2em 0;
+        }
+
+        form {
             text-align: center;
         }
 
-        .gallery-item:hover .overlay {
-            opacity: 1;
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
         }
 
-        .interactive-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
+        form input,
+        form textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        form input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
             cursor: pointer;
         }
 
-    #services h2,
-    #testimonials h2,
-    #cta h2,
-    #about h2,
-    #contact h2,
-    #gallery h2 {
-        color: #007033;
-    }
+        form input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .review {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
 
-    #cta {
-        background-color: #ffffff;
-        color: #007033;
-    }
+        .form-container {
+            text-align: center;
+        }
+        .slides-container {
+            display: flex;
+            overflow-x: auto;
+        }
 
-    #map-container {
-        width: 100%;
-        height: 400px; /* Adjust the height as needed */
-        margin-top: 20px;
-        border: 5px solid #007033;
-        border-radius: 10px;
-        overflow: hidden;
-    }
+        .slide {
+            flex: 0 0 50%;
+            margin-right: 20px;
+        }
 
-    #countdown-container {
-        text-align: center;
-        margin-top: 20px;
-    }
+        .slide img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 2em 0;
+        }
 
-    #countdown {
-        font-size: 24px;
-        color: #007033;
-    }
+        .team-member {
+            width: 30%;
+            margin-bottom: 20px;
+            text-align: center;
+        }
 
-    #newsletter-container {
-        text-align: center;
-        margin-top: 20px;
-    }
+        .blog-container {
+            margin: 2em 0;
+        }
 
-    #newsletter-form {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 10px;
-    }
+        .blog-post {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
 
-    #newsletter-email {
-        padding: 10px;
-        border: 2px solid #007033;
-        border-radius: 5px;
-        margin-right: 10px;
-    }
+        .blog-post h3 {
+            margin-top: 0;
+        }
 
-    #newsletter-submit {
-        background-color: #007033;
-        color: #ffffff;
-        padding: 10px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
+        .carousel-container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
 
-    #social-media-feeds {
-        text-align: center;
-        margin-top: 20px;
-    }
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
 
-    #social-media-feeds img {
-        width: 50px; /* Adjust as needed */
-        margin: 0 10px;
-    }
+        .testimonial {
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
 
+        .portfolio-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 2em 0;
+        }
+
+        .portfolio-item {
+            width: 30%;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
+
     <header>
-        <h1>Stylish Interactive Website</h1>
+        <h1>Your Vibrant Website</h1>
     </header>
 
     <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
     </nav>
 
-    <section id="home">
-        <div id="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/your-video-id" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div id="image-container">
-            <img class="interactive-image" src="https://via.placeholder.com/300" alt="Placeholder Image 1">
-            <img class="interactive-image" src="https://via.placeholder.com/300" alt="Placeholder Image 2">
-            <img class="interactive-image" src="https://via.placeholder.com/300" alt="Placeholder Image 3">
-        </div>
-
-        <a href="#" class="button">Click me</a>
+    <section>
+        <h2>Welcome to Our Website!</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod quam eget tortor tincidunt, vel euismod risus auctor.</p>
     </section>
 
-    <section id="about">
-        <h2>About Us</h2>
-        <p>This is a brief description of our company or project.</p>
-    </section>
-
-    <section id="services">
-        <h2>Key Features</h2>
-        <div class="feature-slider">
-            <div class="feature-slides">
-                <div class="feature-slide">
-                    <img src="https://via.placeholder.com/300" alt="Feature 1">
-                    <h3>Feature 1</h3>
-                    <p>Description of Feature 1.</p>
-                </div>
-                <div class="feature-slide">
-                    <img src="https://via.placeholder.com/300" alt="Feature 2">
-                    <h3>Feature 2</h3>
-                    <p>Description of Feature 2.</p>
-                </div>
-                <div class="feature-slide">
-                    <img src="https://via.placeholder.com/300" alt="Feature 3">
-                    <h3>Feature 3</h3>
-                    <p>Description of Feature 3.</p>
-                </div>
-            </div>
+    <section>
+        <h2>Featured Video</h2>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/your-video-id" frameborder="0" allowfullscreen></iframe>
         </div>
     </section>
 
-    <section id="countdown-container">
-        <h2 style="color: #007033;">Event Countdown</h2>
-        <div id="countdown"></div>
-    </section>
-
-    <section id="gallery">
+    <section>
         <h2>Image Gallery</h2>
-        <div class="image-grid">
-            <div class="gallery-item">
-                <img src="https://via.placeholder.com/300" alt="Gallery Image 1">
-                <div class="overlay">
-                    <p>Click to view</p>
-                </div>
+        <div class="slides-container">
+            <div class="slide">
+                <img src="image1.jpg" alt="Image 1">
             </div>
-            <div class="gallery-item">
-                <img src="https://via.placeholder.com/300" alt="Gallery Image 2">
-                <div class="overlay">
-                    <p>Click to view</p>
-                </div>
+            <div class="slide">
+                <img src="image2.jpg" alt="Image 2">
             </div>
-            <div class="gallery-item">
-                <img src="https://via.placeholder.com/300" alt="Gallery Image 3">
-                <div class="overlay">
-                    <p>Click to view</p>
-                </div>
-            </div>
+        </div>
+        <div class="button-container">
+            <button>Click me</button>
         </div>
     </section>
 
-    <section id="map">
-        <h2 style="color: #007033;">Our Location</h2>
-        <div id="map-container">
-            <!-- Replace the sample image with your actual interactive map iframe -->
-            <iframe
-                width="100%"
-                height="100%"
-                frameborder="0"
-                scrolling="no"
-                marginheight="0"
-                marginwidth="0"
-                allowfullscreen=""
-                src="https://www.google.com/maps?q=33.255190656280696,-97.15112086650629&hl=es;z%3D14&amp&output=embed" 
-            ></iframe>
+    <section>
+        <h2>Interactive Map</h2>
+        <div class="interactive-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22442.006889328195!2d-74.00597267133177!3d40.71277528669665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1641478301555!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
 
-    <section id="newsletter-container">
-        <h2 style="color: #007033;">Subscribe to Our Newsletter</h2>
-        <form id="newsletter-form">
-            <input type="email" id="newsletter-email" placeholder="Enter your email" required>
-            <button type="button" id="newsletter-submit" onclick="subscribeNewsletter()">Subscribe</button>
-        </form>
-    </section>
-
-    <section id="social-media-feeds">
-        <h2 style="color: #007033;">Social Media Feeds</h2>
-        <!-- Placeholder images for social media feeds -->
-        <img src="https://via.placeholder.com/50" alt="Social Media Feed 1">
-        <img src="https://via.placeholder.com/50" alt="Social Media Feed 2">
-        <img src="https://via.placeholder.com/50" alt="Social Media Feed 3">
-        <!-- Add more social media feed images as needed -->
-    </section>
-
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <form id="contactForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-    
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-    
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-    
-            <button type="button" class="button" onclick="submitForm()">Send Message</button>
-        </form>
-    </section>
-
-    <section id="testimonials">
-        <h2 style="color: #ffffff;">What Our Customers Say</h2>
-        <div class="testimonial">
-            <img src="https://via.placeholder.com/50" alt="Customer 1">
-            <p>"Great service! The features provided are amazing."</p>
+    <section class="reviews-container">
+        <h2>Customer Reviews</h2>
+        <div class="review">
+            <p>"Great service! The team was very professional and responsive."</p>
             <p>- John Doe</p>
         </div>
-        <div class="testimonial">
-            <img src="https://via.placeholder.com/50" alt="Customer 2">
-            <p>"I love the interactive elements on this website. It's user-friendly."</p>
+        <div class="review">
+            <p>"I highly recommend this company. Amazing experience!"</p>
             <p>- Jane Smith</p>
         </div>
     </section>
 
-    <section id="cta">
-        <h2>Ready to Experience the Future?</h2>
-        <p>Join us now for an interactive journey. Click the button below!</p>
-        <a href="#" class="button">Get Started</a>
+    <section class="form-container">
+        <h2>Contact Us</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" required></textarea><br>
+
+            <input type="submit" value="Submit">
+        </form>
     </section>
 
-    <div id="footer">
-        <p>&copy; 2023 Interactive Website. All rights reserved.</p>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">Contact Us</a>
-    </div>
+    <section class="carousel-container">
+        <h2>Client Testimonials</h2>
+        <div class="carousel">
+            <div class="testimonial">
+                <p>"Excellent work! The team exceeded our expectations."</p>
+                <p>- Client 1</p>
+            </div>
+            <div class="testimonial">
+                <p>"Professional and reliable. We would recommend their services."</p>
+                <p>- Client 2</p>
+            </div>
+            <!-- Add more testimonials as needed -->
+        </div>
+    </section>
+
+    <section class="portfolio-container">
+        <h2>Our Portfolio</h2>
+        <div class="portfolio-item">
+            <img src="portfolio-item1.jpg" alt="Portfolio Item 1">
+            <h3>Project 1</h3>
+        </div>
+        <div class="portfolio-item">
+            <img src="portfolio-item2.jpg" alt="Portfolio Item 2">
+            <h3>Project 2</h3>
+        </div>
+        <div class="portfolio-item">
+            <img src="portfolio-item3.jpg" alt="Portfolio Item 3">
+            <h3>Project 3</h3>
+        </div>
+        <!-- Add more portfolio items as needed -->
+    </section>
+
+    <section class="team-container">
+        <h2>Meet Our Team</h2>
+        <div class="team-member">
+            <img src="team-member1.jpg" alt="Team Member 1">
+            <h3>John Doe</h3>
+            <p>CEO</p>
+        </div>
+        <div class="team-member">
+            <img src="team-member2.jpg" alt="Team Member 2">
+            <h3>Jane Smith</h3>
+            <p>Marketing Manager</p>
+        </div>
+        <div class="team-member">
+            <img src="team-member3.jpg" alt="Team Member 3">
+            <h3>Bob Johnson</h3>
+            <p>Developer</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Frequently Asked Questions</h2>
+        <div class="accordion">
+            <button class="accordion-item">Question 1</button>
+            <div class="accordion-content">
+                <p>Answer 1</p>
+            </div>
+
+            <button class="accordion-item">Question 2</button>
+            <div class="accordion-content">
+                <p>Answer 2</p>
+            </div>
+
+            <!-- Add more accordion items as needed -->
+        </div>
+    </section>
+
+    <section>
+        <h2>Countdown Timer</h2>
+        <div id="countdown"></div>
+        <script>
+            // Set the date we're counting down to
+            var countDownDate = new Date("Dec 31, 2023 23:59:59").getTime();
+
+            // Update the countdown every 1 second
+            var x = setInterval(function() {
+
+                // Get the current date and time
+                var now = new Date().getTime();
+
+                // Calculate the time remaining
+                var distance = countDownDate - now;
+
+                // Calculate days, hours, minutes, and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Display the countdown
+                document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+                + minutes + "m " + seconds + "s ";
+
+                // If the countdown is over, display a message
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("countdown").innerHTML = "EXPIRED";
+                }
+            }, 1000);
+        </script>
+    </section>
+
+    <section>
+        <h2>Announcements</h2>
+        <marquee behavior="scroll" direction="left">
+            This is a scrolling announcement. Check out our latest updates!
+        </marquee>
+    </section>
+
+    <section>
+        <h2>Subscribe to Our Newsletter</h2>
+        <form>
+            <label for="newsletterEmail">Email:</label>
+            <input type="email" id="newsletterEmail" name="newsletterEmail" required>
+            <input type="submit" value="Subscribe">
+        </form>
+    </section>
 
 
-    <script>
-        // Add your interactive JavaScript here
-        // For example, you can use vanilla JavaScript for slider and tooltips
-        const featureSlider = document.querySelector('.feature-slider');
-        const featureSlides = document.querySelector('.feature-slides');
-        const galleryItems = document.querySelectorAll('.gallery-item');
+    <section class="blog-container">
+        <h2>Latest Blog Posts</h2>
+        <div class="blog-post">
+            <h3>Post Title 1</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod quam eget tortor tincidunt.</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="blog-post">
+            <h3>Post Title 2</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod quam eget tortor tincidunt.</p>
+            <a href="#">Read More</a>
+        </div>
+    </section>
 
-        // Simple slider functionality
-        let slideIndex = 0;
+    <section>
+        <h2>Client Logos</h2>
+        <div class="logo-carousel">
+            <div class="logo-item"><img src="logo1.png" alt="Client Logo 1"></div>
+            <div class="logo-item"><img src="logo2.png" alt="Client Logo 2"></div>
+            <div class="logo-item"><img src="logo3.png" alt="Client Logo 3"></div>
+            <!-- Add more logo items as needed -->
+        </div>
+    </section>
 
-        function showSlides() {
-            featureSlides.style.transform = `translateX(${-slideIndex * 100}%)`;
-        }
+    <section>
+        <h2>Progress Bar</h2>
+        <div class="progress-bar-container">
+            <div class="progress-bar" style="width: 70%;"></div>
+        </div>
+    </section>
 
-        function nextSlide() {
-            if (slideIndex < 2) {
-                slideIndex++;
-            } else {
-                slideIndex = 0;
-            }
-            showSlides();
-        }
+    <section>
+        <h2>Dynamic Pie Chart</h2>
+        <div class="pie-chart-container">
+            <div class="pie-chart" data-percent="75">
+                <span class="percent"></span>
+                <div class="slice">
+                    <div class="bar"></div>
+                    <div class="fill"></div>
+                </div>
+            </div>
+        </div>
+        <script>
+            // Update the pie chart percentage
+            var pieChart = document.querySelector('.pie-chart');
+            var percent = pieChart.getAttribute('data-percent');
+            var fill = document.querySelector('.fill');
+            fill.style.transform = 'rotate(' + (360 * percent / 100) + 'deg)';
+            document.querySelector('.percent').innerText = percent + '%';
+        </script>
+    </section>
+    
+    <section>
+        <h2>Hover Effect for Images</h2>
+        <div class="image-hover-container">
+            <div class="image-hover-item">
+                <img src="image-hover1.jpg" alt="Image 1">
+                <div class="image-overlay">
+                    <p>Additional Information</p>
+                </div>
+            </div>
+            <div class="image-hover-item">
+                <img src="image-hover2.jpg" alt="Image 2">
+                <div class="image-overlay">
+                    <p>Additional Information</p>
+                </div>
+            </div>
+            <!-- Add more image items as needed -->
+        </div>
+    </section>
 
-        // Auto slide every 2 seconds
-        setInterval(nextSlide, 2000);
+    <footer>
+        <p>&copy; 2023 Your Vibrant Website. All rights reserved.</p>
+    </footer>
 
-        function submitForm() {
-        // You can add your form submission logic here
-        // For simplicity, let's just log the form data to the console
-        const formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            message: document.getElementById('message').value
-        };
-        console.log('Form Data:', formData);
-
-        // Optionally, you can reset the form after submission
-        document.getElementById('contactForm').reset();
-    }
-
-        // Add simple tooltip functionality
-        galleryItems.forEach((item) => {
-            item.addEventListener('mouseenter', () => {
-                const overlay = item.querySelector('.overlay');
-                overlay.style.opacity = 1;
-            });
-
-            item.addEventListener('mouseleave', () => {
-                const overlay = item.querySelector('.overlay');
-                overlay.style.opacity = 0;
-            });
-        });
-
-         // Set the target date for the countdown (change as needed)
-        const targetDate = new Date("December 31, 2023 23:59:59").getTime();
-
-        // Update the countdown every second
-        const countdownInterval = setInterval(updateCountdown, 1000);
-
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const timeRemaining = targetDate - now;
-
-            if (timeRemaining > 0) {
-                const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
-
-                document.getElementById("countdown").innerHTML =
-                    `${days}d ${hours}h ${minutes}m ${seconds}s`;
-            } else {
-                // Display a message when the countdown is over
-                document.getElementById("countdown").innerHTML = "Event Over!";
-                clearInterval(countdownInterval);
-            }
-        }
-
-        function subscribeNewsletter() {
-            const email = document.getElementById("newsletter-email").value;
-            // Implement your newsletter subscription logic here
-            console.log(`Subscribed with email: ${email}`);
-            // Optionally, you can reset the form after subscription
-            document.getElementById("newsletter-form").reset();
-        }
-
-
-        let scrollSpeed = 15; // Adjust the scroll speed as needed
-        let lastScrollTop = 0;
-
-        window.addEventListener('scroll', function() {
-            const st = window.pageYOffset || document.documentElement.scrollTop;
-            if (st > lastScrollTop) {
-                // Scrolling down, slow down the animation
-                document.styleSheets[0].insertRule(`@keyframes gradientAnimation {0% {background-position: 0% 50%;} 50% {background-position: 100% 50%;} 100% {background-position: 0% 50%;}}`, 0);
-            } else {
-                // Scrolling up, speed up the animation
-                document.styleSheets[0].insertRule(`@keyframes gradientAnimation {0% {background-position: 0% 50%;} 50% {background-position: 100% 50%;} 100% {background-position: 0% 50%;}}`, 0);
-            }
-            lastScrollTop = st;
-        });
-    </script>
 </body>
 </html>
