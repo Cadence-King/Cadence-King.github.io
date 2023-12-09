@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stylish Website</title>
+  <style>
+
+    @media only screen and (max-width: 600px) {
+      header {
+        font-size: 1.5em;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        top: 4em;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.3s ease-in-out;
+      }
+
+      nav.show {
+        max-height: 200px; /* Adjust based on your content height */
+      }
+
+      nav a {
+        display: block;
+        padding: 1em;
+        border-bottom: 1px solid #555;
+      }
+
+      section {
+        padding: 1em;
+      }
+
+      .feature, .service, .blog-post {
+        width: 100%;
+        margin-bottom: 1em;
+      }
+
+      .cta {
+        padding: 0.5em;
+      }
+
+      .contact-form {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 1em;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    .hero {
+      background: url('https://via.placeholder.com/1200x400') center/cover;
+      color: #fff;
+      text-align: center;
+      padding: 5em 0;
+    }
+
+    .hero h2 {
+      margin: 0;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: #444;
+      padding: 0.5em;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 1em;
+      font-weight: bold;
+      transition: color 0.3s ease-in-out;
+    }
+
+    nav a:hover {
+      color: #ffcc00;
+    }
+
+    .menu-icon {
+      display: none;
+      cursor: pointer;
+      font-size: 1.5em;
+    }
+
+    section {
+      padding: 2em;
+    }
+
+    .feature {
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 1em;
+      margin-bottom: 1em;
+      border-radius: 5px;
+    }
+
+    .feature img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    .cta {
+      background-color: #007bff;
+      color: #fff;
+      text-align: center;
+      padding: 1em;
+      margin-top: 2em;
+      border-radius: 5px;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    .testimonial {
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 1em;
+      margin-bottom: 1em;
+      border-radius: 5px;
+    }
+
+    .testimonial p {
+      margin: 0;
+    }
+
+    .blog-post {
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 1em;
+      margin-bottom: 1em;
+      border-radius: 5px;
+    }
+
+    .blog-post a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .blog-post a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1em;
+    }
+
+    .contact-form label {
+      display: block;
+      margin-bottom: 0.5em;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.5em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .contact-form button {
+      background-color: #007bff;
+      color: #fff;
+      padding: 0.5em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1em;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .back-to-top a {
+      background-color: #007bff;
+      color: #fff;
+      padding: 1em;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .back-to-top a:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Stylish Website</h1>
+  </header>
+
+  <div class="menu-icon">&#9776;</div>
+
+  <nav>
+    <div class="logo">
+      <h1>Stylish Website</h1>
+    </div>
+    <div class="menu-icon">&#9776;</div>
+    <ul class="nav-links">
+      <li><a href="#top">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero">
+    <h2>Welcome to our Stylish Website</h2>
+  </div>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+  </section>
+
+  <section>
+    <div class="feature">
+      <h2>Feature 1</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <img src="https://via.placeholder.com/400" alt="Feature 1">
+    </div>
+
+    <div class="feature">
+      <h2>Feature 2</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <img src="https://via.placeholder.com/400" alt="Feature 2">
+    </div>
+  </section>
+
+  <div class="cta">
+    <h2>Call to Action</h2>
+    <p>Subscribe now for exclusive offers!</p>
+    <form action="#" method="post">
+      <input type="email" name="email" placeholder="Enter your email">
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+
+  <section>
+    <h2>Testimonials</h2>
+    <div class="testimonial">
+      <p>"Great service! I highly recommend it."</p>
+      <p>- John Doe</p>
+    </div>
+
+    <div class="testimonial">
+      <p>"Awesome experience! Will definitely use it again."</p>
+      <p>- Jane Smith</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="https://via.placeholder.com/200" alt="Image 1">
+      <img src="https://via.placeholder.com/200" alt="Image 2">
+      <img src="https://via.placeholder.com/200" alt="Image 3">
+      <img src="https://via.placeholder.com/200" alt="Image 4">
+    </div>
+  </section>
+
+
+  <section>
+    <h2>Services</h2>
+    <div class="service">
+      <h3>Web Development</h3>
+      <p>We create modern and responsive websites tailored to your needs.</p>
+    </div>
+
+    <div class="service">
+      <h3>Graphic Design</h3>
+      <p>Our talented designers will bring your ideas to life with stunning visuals.</p>
+    </div>
+
+    <div class="service">
+      <h3>Digital Marketing</h3>
+      <p>Reach your target audience effectively with our strategic digital marketing solutions.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Interactive Feature</h2>
+    <div id="interactive-feature">
+      <p>Hover over me for an effect!</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Blog</h2>
+    <div class="blog-post">
+      <h3>10 Tips for Effective Web Design</h3>
+      <p>Creating a stunning website involves more than just good looks...</p>
+      <a href="#">Read more</a>
+    </div>
+
+    <div class="blog-post">
+      <h3>The Future of Web Development: Trends to Watch</h3>
+      <p>Stay ahead of the curve by exploring the latest trends in web development...</p>
+      <a href="#">Read more</a>
+    </div>
+
+    <div class="blog-post">
+      <h3>Optimizing Your Website for SEO: A Beginner's Guide</h3>
+      <p>Improve your website's visibility on search engines with these essential SEO tips...</p>
+      <a href="#">Read more</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <div class="contact-form">
+      <form action="#" method="post">
+        <label for="name">Name:</label>
+        <input type="text" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea name="message" rows="4" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+    <div class="back-to-top">
+        <a href="#top">Back to Top</a>
+      </div>
+
+  <footer>
+    <p>&copy; 2023 Stylish Website. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Interactive feature using JavaScript
+    const interactiveFeature = document.getElementById('interactive-feature');
+    
+    interactiveFeature.addEventListener('mouseover', () => {
+      interactiveFeature.style.backgroundColor = '#ffcc00';
+      interactiveFeature.style.color = '#333';
+    });
+
+    interactiveFeature.addEventListener('mouseout', () => {
+      interactiveFeature.style.backgroundColor = '#fff';
+      interactiveFeature.style.color = '#000';
+    });
+
+    
+      // Responsive Navigation
+    const menuIcon = document.querySelector('.menu-icon');
+    const nav = document.querySelector('nav');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuIcon.addEventListener('click', () => {
+      nav.classList.toggle('show');
+    });
+
+
+       // Smooth Scroll
+       document.querySelectorAll('.nav-links a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+        nav.classList.remove('show');
+      });
+    });
+
+
+      // Back to Top with Animation
+      const backToTop = document.querySelector('.back-to-top a');
+
+        window.addEventListener('scroll', () => {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            backToTop.style.opacity = '1';
+        } else {
+            backToTop.style.opacity = '0';
+        }
+        });
+
+        backToTop.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const target = document.querySelector(backToTop.getAttribute('href'));
+        target.scrollIntoView({
+            behavior: 'smooth'
+        });
+        });
+
+  </script>
+
+</body>
+</html>
