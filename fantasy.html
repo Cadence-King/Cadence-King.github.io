@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy Adventure Travel</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file for styling -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+</head>
+
+<style>
+/* styles.css */
+
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(to bottom, #4B0082, #000080); /* Purple to Blue gradient */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+
+/* Header Styles (Continued) */
+text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.hero {
+    margin-top: 50px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FFD700; /* Gold color */
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* Destinations Section Styles */
+#destinations {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.destination-card {
+    margin-bottom: 30px;
+}
+
+.destination-card img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Experiences Section Styles */
+#experiences {
+    background-color: #f5f5f5; /* Light gray background */
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.tour {
+    margin-bottom: 30px;
+}
+
+/* About Us Section Styles */
+#about {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.team-member {
+    margin-bottom: 30px;
+}
+
+.team-member img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+/* Contact Us Section Styles */
+#contact {
+    background-color: #4B0082; /* Purple background */
+    color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #000080; /* Blue background */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.quick-links a {
+    color: #fff;
+    margin-right: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.newsletter {
+    margin-top: 20px;
+}
+
+.copyright {
+    margin-top: 20px;
+}
+
+/* Blog Section Styles */
+#blog {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #fff; /* White background */
+}
+
+.blog-post {
+    margin-bottom: 30px;
+}
+
+.blog-post img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.blog-post h3 {
+    margin-top: 15px;
+}
+
+.blog-post a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #4B0082; /* Purple button color */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Additional Styling */
+@media screen and (max-width: 768px) {
+    /* Adjustments for smaller screens */
+    header {
+        padding: 15px;
+    }
+
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .cta-button {
+        font-size: 14px;
+    }
+
+    /* Add more responsive styles as needed */
+}
+
+.blog-content {
+    display: none;
+    margin-top: 15px;
+}
+
+.blog-content.show {
+    display: block;
+}
+
+/* Add this CSS to your styles.css file */
+/* Mobile Menu Styles */
+.mobile-menu-icon {
+    display: none;
+    cursor: pointer;
+    padding: 15px;
+}
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.nav-menu {
+    display: flex;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    margin-left: auto;
+}
+
+.nav-menu li {
+    margin-right: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .mobile-menu-icon {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        background-color: #000080; /* Dark blue background */
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-menu.show {
+        display: flex;
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 15px;
+        color: #fff;
+        text-decoration: none;
+        transition: background-color 0.3s;
+    }
+
+    .nav-menu a:hover {
+        background-color: #4B0082; /* Purple on hover */
+    }
+}
+
+/* Add this CSS to your styles.css file */
+/* Scroll-to-Top Button Styles */
+#scrollToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 24px;
+    background-color: #4B0082; /* Purple background */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #000080; /* Dark blue on hover */
+}
+</style>
+
+<body>
+
+<!-- Header Section -->
+<header data-aos="fade-down">
+    <div class="logo">Fantasy Travel</div>
+    <div class="mobile-menu-icon" onclick="toggleMobileMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#destinations">Destinations</a></li>
+            <li><a href="#experiences">Experiences</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+    <div class="hero">
+        <h1>Embark on a Magical Journey</h1>
+        <a href="#destinations" class="cta-button">Explore Now</a>
+    </div>
+</header>
+
+<!-- Update the "Featured Destinations" section -->
+<section id="destinations" data-aos="fade-up">
+    <h2>Featured Destinations</h2>
+    
+    <!-- Elven Forest Carousel -->
+    <div class="destination-carousel">
+        <h3>Elven Forest</h3>
+        <div class="carousel">
+            <img src="elven_forest_1.jpg" alt="Elven Forest 1">
+            <img src="elven_forest_2.jpg" alt="Elven Forest 2">
+            <img src="elven_forest_3.jpg" alt="Elven Forest 3">
+        </div>
+        <p>Discover the enchanting realm of the elves...</p>
+    </div>
+
+    <!-- Dragon Isles Carousel -->
+    <div class="destination-carousel">
+        <h3>Dragon Isles</h3>
+        <div class="carousel">
+            <img src="dragon_isles_1.jpg" alt="Dragon Isles 1">
+            <img src="dragon_isles_2.jpg" alt="Dragon Isles 2">
+            <img src="dragon_isles_3.jpg" alt="Dragon Isles 3">
+        </div>
+        <p>Explore the mystical Dragon Isles and witness the majestic dragons in flight...</p>
+    </div>
+    
+    <!-- Add more destination carousels as needed -->
+</section>
+
+<section id="experiences" data-aos="fade-up">
+    <h2>Themed Tours</h2>
+    
+    <!-- Magical Creatures Safari -->
+    <div class="tour" onmouseover="showInfo('creatures')" onmouseout="hideInfo('creatures')">
+        <h3>Magical Creatures Safari</h3>
+        <div class="tour-info" id="creatures-info">
+            <p>Embark on a safari to encounter mythical creatures...</p>
+        </div>
+    </div>
+
+    <!-- Enchanting Castle Tours -->
+    <div class="tour" onmouseover="showInfo('castle')" onmouseout="hideInfo('castle')">
+        <h3>Enchanting Castle Tours</h3>
+        <div class="tour-info" id="castle-info">
+            <p>Explore the grandeur of ancient enchanted castles...</p>
+        </div>
+    </div>
+    
+    <!-- Alchemy Workshops -->
+    <div class="tour" onmouseover="showInfo('alchemy')" onmouseout="hideInfo('alchemy')">
+        <h3>Alchemy Workshops</h3>
+        <div class="tour-info" id="alchemy-info">
+            <p>Learn the secrets of alchemy in mysterious workshops...</p>
+        </div>
+    </div>
+    
+    <!-- Add more themed tours as needed -->
+</section>
+<!-- About Us Section -->
+<section id="about" data-aos="fade-up">
+    <h2>Our Story</h2>
+    <p>Embark on a journey with Fantasy Adventure Travel, where dreams come to life...</p>
+    <!-- Add team member profiles here -->
+    <div class="team-member">
+        <img src="wizard.jpg" alt="Wizard Team Member">
+        <h3>Merlin the Guide</h3>
+        <p>Master of magical destinations</p>
+    </div>
+    <!-- Add more team member profiles as needed -->
+</section>
+
+<section id="blog" data-aos="fade-up">
+    <h2>Travel Chronicles</h2>
+    
+    <!-- The Enchanted Forest Blog Post -->
+    <div class="blog-post">
+        <img src="enchanted_forest.jpg" alt="Enchanted Forest">
+        <h3>The Enchanted Forest: A Journey into Magic</h3>
+        <p>Join us on a mesmerizing adventure through the ancient enchanted forest...</p>
+        <a href="#">Read More</a>
+        <div class="blog-content">
+            <p>Immerse yourself in the lush greenery and mystical atmosphere of the enchanted forest...</p>
+            <!-- Additional content goes here -->
+        </div>
+    </div>
+
+    <!-- Dragon Isles Blog Post -->
+    <div class="blog-post">
+        <img src="dragon_isles.jpg" alt="Dragon Isles">
+        <h3>Dragon Isles: Where Dragons Soar the Skies</h3>
+        <p>Explore the mystical Dragon Isles and witness the majestic dragons in flight...</p>
+        <a href="#">Read More</a>
+        <div class="blog-content">
+            <p>Discover the breathtaking landscapes and encounter the awe-inspiring dragons...</p>
+            <!-- Additional content goes here -->
+        </div>
+    </div>
+    
+    <!-- Add more blog posts as needed -->
+</section>
+
+<!-- Contact Us Section -->
+<section id="contact" data-aos="fade-up">
+    <h2>Contact Us</h2>
+    <p>Have questions or ready to plan your magical adventure? Reach out to us!</p>
+    <!-- Add inquiry form here -->
+    <form action="submit_form.php" method="post" name="contactForm" onsubmit="return validateForm()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+    
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+    
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+    
+        <input type="submit" value="Submit">
+    </form>
+</section>
+
+<!-- Footer Section -->
+<footer data-aos="fade-up">
+    <div class="quick-links">
+        <a href="#home">Home</a>
+        <a href="#destinations">Destinations</a>
+        <a href="#experiences">Experiences</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact Us</a>
+    </div>
+    <div class="newsletter">
+        <p>Subscribe to our newsletter for magical updates!</p>
+        <!-- Add newsletter subscription form here -->
+    </div>
+    <div class="copyright">
+        <p>&copy; 2023 Fantasy Adventure Travel</p>
+    </div>
+</footer>
+
+
+<script>
+    function validateForm() {
+        var name = document.forms["contactForm"]["name"].value;
+        var email = document.forms["contactForm"]["email"].value;
+        var message = document.forms["contactForm"]["message"].value;
+
+        if (name == "" || email == "" || message == "") {
+            alert("Please fill out all fields in the form.");
+            return false;
+        }
+    }
+
+
+</script>
+
+
+<script>
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
+<script>
+    // Initialize Slick Carousel for each destination
+    $('.carousel').slick({
+        dots: true,
+        infinite: true,
+        speed: 500,
+        fade: true,
+        cssEase: 'linear'
+    });
+</script>
+
+<script>
+    function showInfo(tour) {
+        document.getElementById(tour + '-info').style.display = 'block';
+    }
+
+    function hideInfo(tour) {
+        document.getElementById(tour + '-info').style.display = 'none';
+    }
+</script>
+
+<script>
+    document.querySelectorAll('.blog-post').forEach(post => {
+        const readMoreLink = post.querySelector('a');
+        const blogContent = post.querySelector('.blog-content');
+
+        readMoreLink.addEventListener('click', function (e) {
+            e.preventDefault();
+            blogContent.classList.toggle('show');
+            readMoreLink.innerText = blogContent.classList.contains('show') ? 'Read Less' : 'Read More';
+        });
+    });
+</script>
+
+<script>
+    AOS.init({
+        duration: 800, // Animation duration in milliseconds
+        easing: 'ease-in-out', // Animation easing effect
+    });
+</script>
+
+<!-- Add this script after the previous JavaScript code in the HTML file -->
+<script>
+    function toggleMobileMenu() {
+        const navMenu = document.querySelector('.nav-menu');
+        navMenu.classList.toggle('show');
+    }
+</script>
+
+<!-- Add this script after the previous JavaScript code in the HTML file -->
+<script>
+    window.onscroll = function() {
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            scrollToTopBtn.style.display = "block";
+        } else {
+            scrollToTopBtn.style.display = "none";
+        }
+    }
+
+    function scrollToTop() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+    }
+</script>
+
+<button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top">&#9650;</button>
+
+</body>
+</html>
