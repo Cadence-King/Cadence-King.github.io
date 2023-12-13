@@ -3,38 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChatGPT Expiriment</title>
+    <title>ChatGPT Experiment</title>
 </head>
-<body>
 
-    <h1>ChatGPT Expiriment</h1>
+<style>
+    div.content{
+        width:1000px;
+    }
+</style>
+
+<body>
+<div class="content">
+    <h1>ChatGPT Experiment</h1>
     <h2>By: Cadence King - cak0210</h2>
 
     <a href="https://github.com/Cadence-King/Cadence-King.github.io">Github</a>
 
     <P>
-        The purpose of this expiriment is to see how well ChatGPT does in creating a basic 'vanilla' HTML website. 
-        As the attempts continue the guidance offered to ChatGPT went down. With each attempt the slate was wiped 
+        The purpose of this experiment is to see how well ChatGPT does in creating a basic 'vanilla' HTML website. 
+        As the attempts continued the guidance offered to ChatGPT went down. With each attempt the slate was wiped 
         clean and a fresh chat was started. The idea of this is that there is no bias of ChatGPT due to previous chat 
-        ideas. However, this is not truely the case as ChatGPT is constantly taking in infomation from its userbase. 
-        With this in mind we may be able to see how ChatGPT could have improved over time.
+        ideas. However, this is not truly the case as ChatGPT is constantly taking in information from its user base. 
+        With this in mind we may be able to see how ChatGPT could have improved over time. Keep in mind that ChatGPT
+        is unable to provide images and as such they are missing from the experiments.
     </P>
 
-    <h4>Iterations:</h4>
+    <h3>Iterations</h3>
     <ul>        
         <li><a href="FirstTry.html">First Attempt</a></li>
         <ul>
             <p>
             <li> Thoughts:</li>
                 Was very surprised with how well ChatGPT did. It was also fun seeing what it would add.
-                The result was 1 vanilla html document. I also prevented ChatGPT from using all the libraries and frameworks it wanted to.
+                The result was 1 vanilla html document. I also prevented ChatGPT from using all the libraries and frameworks
+                 it wanted to.
                 
                 <p>
-                The resulting site doesn't have much functionality, but it looks better than I expected. I think this is due to me asking it to use UNT colors and repeatedly asking for more stylization. 
-                Though I tried to make my intro prompt clear, it was necessary to continue asking for more content to be added.
-                The process was a bit tedious, despite it referencing previous prompts it would sometime decide to rewrite or omit previous sections, so most of my time was spent re-reading to see if it had changed anything.
+                The resulting site doesn't have much functionality, but it looks better than I expected. I think this is 
+                due to me asking it to use UNT colors and repeatedly asking for more stylization. 
+                Though I tried to make my intro prompt clear, it was necessary to continue asking for more content to be 
+                added.
+                The process was a bit tedious, despite it referencing previous prompts it would sometime decide to rewrite 
+                or omit previous sections, so most of my time was spent re-reading to see if it had changed anything.
                 </p>
-            
+                <!--
                 <li> In the end we ended up with:</li>      
                 <ul> 
                     <li>Header (title and menu bar)</li>
@@ -48,17 +60,21 @@
                     <li>Customer Reviews</li>
                     <li>Footer</li>
                     <li>Color gradient animated background (which speeds up and down depending on scroll direction -not very noticeable)</li>
-                </ul> 
+                </ul> -->
             <p></p>      
             <li>Example Prompts:</li>
                 <ul>
-                    <li>"Hello, pretend you are a master web developer. Give me a full colorful website with lots of interactive elements. I want video, images, buttons, menus, and more. The website can be any topic you like. Please give me all of the files needed and outside links necessary."</li>
+                    <li>"Hello, pretend you are a master web developer. Give me a full colorful website with lots of 
+                        interactive elements. I want video, images, buttons, menus, and more. The website can be any topic
+                         you like. Please give me all of the files needed and outside links necessary."</li>
                     <li>"Continue adding more to the website."</li>
                     <li>"Give me some more colorful interactive elements a professional site would have."</li>
-                    <li>"what else could be added?" - To which it gave 15 examples of what could be added. Since a few required outside libraries I asked it to add only a few otherwise it would have been a mess.</li>
+                    <li>"what else could be added?" - To which it gave 15 examples of what could be added. Since a few 
+                        required outside libraries I asked it to add only a few otherwise it would have been a mess.</li>
                 </ul>
-           
-            Since Chat GPT would omit/forget sections I also occasionally fed it back the full html document to set a new baseline.</li>
+            Since Chat GPT would omit/forget sections I also occasionally fed it back the full html document to set a new baseline.
+            The major issues with this attempt were that I was too structured in my initial prompt, and too guiding in my follow-ups. 
+            The result is a decent looking website, but it did not contain what I was looking for in terms of ChatGPT produced errors.
             
             <p></p>
             <li>WAVE Accessibility Report</li>
@@ -79,17 +95,20 @@
             <p>
                 <li>Thoughts:</li>
                 Improving on last time, instead of asking it to fix and re-do certain segments I allowed it to make mistakes 
-                and not fill in all the details.   
+                and not fill in all the details. This was to discover how careful ChatGPT was in preventing errors or ensuring accessibility.  
                 <p>
                 Because I asked for so many elements it didn't fully flesh out each individual item like
                 I allowed it to in the first attempt. This resulted in the few elements not turning out right. 
+                Namely the interactive map which wasn't properly scaled. As well as the progress bar and pie chart which do not work at all.
                 </p>
+                <!--
                 <li>Errors:</li>
                 <ul>
                     <li>Interactive map isn't sized properly</li>
                     <li> Progress bar doesn't work</li>
                     <li>Dynamic pie chart doesn't work</li>
                 </ul>
+                -->
                 <p></p>
                 <li>Example Prompts:</li>
                     <ul>
@@ -100,11 +119,12 @@
                         <li>"fill out the interactive map section with a google maps embed, also add much more to the site"</li>
                         <li> After this I just kept saying "add more elements"</li>
                     </ul>
-                <li>Comments:</li>
                 When writing the first opening prompt I wanted to see how much could be done with just 1 message. 
-                Because of how little ChatGPT did last attempt based off a vague first message, I felt had to give examples of some elements to get it started. 
-                But even with all these example elements it still did not deliver all of the requests first try. 
-                Also because I asked for so much at once it lacked any attention to detail so more mistakes were made.
+                Because of how little ChatGPT did last attempt based off a vague first message, I felt had to give examples 
+                of some elements to get it started. 
+                But even with all these example elements it still did not deliver all of the requests on the first try. 
+                Additionally, since I asked for so much at once it lacked any attention to detail so more mistakes were made.
+                I feel this is less due to ChatGPT making mistakes and more a consequence of forcing too much.
                 <p></p>
                 <li>WAVE Accessibility Report</li>
                 <ul>
@@ -130,27 +150,31 @@
                 in mind my new goal was to provide as little direction as possible to ChatGPT
                 This attempt went decently well. Despite my concerns about how well it would do, it actually went back and
                  revised previous sections of code. It seemingly jumped around at random to improve styling and elements 
-                 it had left bare. It would add both scripts and CSS stylings to each previous elemenets on top of adding 
-                 more. In the end I belive it interperited my prompt as building a modern sleek professional design, since
+                 it had left bare. It would add both scripts and CSS stylings to each previous elements on top of adding 
+                 more. In the end I believe it interpreted my prompt as building a modern sleek professional design, since
                 the color scheme focuses on monochromatic grays.
 
                 <p></p>
                 <li>Example Prompts:</li>
                 <ul>
-                    <li>"You are a professional web developer, give me a stylish website with at least 10 elements of your choice"</li>
+                    <li>"You are a professional web developer, give me a stylish website with at least 10 elements of your 
+                        choice"</li>
                     <li>"continue" x10</li>
                 </ul>
+                I found that reducing my guidance in the first prompt allowed ChatGPT to have more control over what it 
+                creates. Conversely, however, it also results in it hanging on my every word as it needs some direction
                 <p></p>
-                <li>WAVE Accessability Report</li>
+                <li>WAVE Accessibility Report</li>
                 <ul>
                     <li>Errors: 4</li>
                     <li>Contrast Errors: 8</li>
                     <li>Alerts: 9</li>
                 </ul>
-                I believe the website scored so low due to the monochromatic nature of the end product, and the lack of images. We end up with 8 Contrast Errors, which is a major 
-                problem as it leaves many sections unreadable This is as bad as "1.09:1".
-                Other errors found are 4 "Misssing form label(s)" This is because ChatGPT utilized orphaned form labels, which count as alerts.
-                The other errors are due to broken and/or suspicious links.
+                I believe the website scored so low due to the monochromatic nature of the end product, and the lack of 
+                images. We end up with 8 Contrast Errors, which is a major 
+                problem as it leaves many sections unreadable - as bad as a "1.09:1" contrast ratio.
+                Other errors found are 4 "Missing form label(s)" This is because ChatGPT utilized orphaned form labels, 
+                which also resulted in alerts. The other errors are due to broken and/or suspicious links.
             </p>
             You can read the whole 'conversation' here: <a href="https://chat.openai.com/share/67d2a333-e3a5-4313-bb1c-7aa4b095ed82"> Third Attempt Chat</a>
         </ul>
@@ -162,18 +186,18 @@
         <ul>
             <p>
                 <li>Thoughts:</li>
-                This second attempt at the 'continue' method was a bit flawed. I only prompted ChatGPT to continue 5 times which doesnt allow for much 
+                This second attempt at the 'continue' method was a bit flawed. I only prompted ChatGPT to continue 5 times which does not allow for much 
                 progress to be made. The reason I cut this attempt off early was due to my perceived problem with the starting prompt. 
-                Firstly it was giving separate html, css, and js files. Secondly, it was creating an personal 'professional' website.
+                Firstly it was giving separate html, css, and js files. Secondly, it was creating a personal 'professional' website.
                 Additionally, since the prompt was for a professional website, it again produced a monochromatic gray website. I found this 
-                uninteresting so moved on quickly to the next attempt.
+                uninteresting so moved on quickly to the next attempt. Also I made grammatical errors in just the first prompt alone.
                 <li>Example Prompts:</li>
                 <ul>
-                    <li>You a professional web dev. Make a stylish website on a topic of your choice, with many interactive elements.</li>
+                    <li>"You a professional web dev. Make a stylish website on a topic of your choice, with many interactive elements."</li>
                     <li>"continue" x5</li>
                 </ul>
 
-                <li>WAVE Accessability Report</li>
+                <li>WAVE Accessibility Report</li>
                 <ul>
                     <li>Errors: 1</li>
                     <li>Contrast Errors: 0</li>
@@ -181,7 +205,7 @@
                 </ul>
                 This attempt scored well only due to the lack of time. Given more time and elements added there would be a 
                 greater number of errors found on the page. Additionally the attempt lacked any color or interesting visuals. 
-                https://chat.openai.com/share/7f24f69c-5b3c-4971-8951-b147b6a876f1
+                
                 
             </p>
             You can read the whole 'conversation' here: <a href="https://chat.openai.com/share/7f24f69c-5b3c-4971-8951-b147b6a876f1"> Fourth Attempt Chat</a>
@@ -194,11 +218,74 @@
         <ul>
             <p>
                 <li>Thoughts:</li>
-                <li>WAVE Accessability Report</li>
-            </p>
-        </ul>
+                This 5th attempt at letting ChatGPT create a website went very well. I believe the prompt was clear, and 
+                allowed for ChatGPT to have more 'creative' control over the subject matter.
+                This resulted in a much more vibrant webpage with a lot more interesting elements. The result of not being 
+                specific while asking for vibrancy resulted in a professional fantasy travel website, with themed tours.
+                
 
+                <li>Example Prompts:</li>
+                <ul>
+                    <li>"You are a professional web developer. Give me a fleshed out website on any topic you want with as 
+                        many elements as possible and a colorful background."</li>
+                    <li>"Sounds good, give me the html required for this"</li>
+                    <li>"continue" x12</li>
+                </ul>
+
+                <li>WAVE Accessibility Report</li>
+                <ul>
+                    <li>Errors: 0</li>
+                    <li>Contrast Errors: 0</li>
+                    <li>Alerts: 10</li>
+                </ul>
+                This attempt did very well according to the WAVE tool. The alerts given were for broken links (2), 
+                redundant image alternative text (2), suspicious links (2) and 4 device dependent event handlers. 
+                These event handlers are responsible for hiding information on the screen, behind buttons and other interactions. 
+                This could prove a difficulty for users who exhibit physical or mental disabilities.
+                <p>
+                Despite the good WAVE score, there are clear issues with the website as it is now. The hypertext in the 
+                navigation bar is extremely hard to see on top of the background
+                An additional issue that is present is due to the fade-up effect present. Occasionally the footer's 
+                fade-up will push the browser window too far up for it to be triggered. This means that it is only present
+                 for a second during the animation before it disappears again. This issue is commonly replicable. Another 
+                 design issue is the navbar being off center. At some point in the provided code it was centered but it 
+                 was redone, favoring the right hand side.
+                </p>
+            </p>
+            You can read the whole 'conversation' here: <a href="https://chat.openai.com/share/1bf728d4-2431-415c-bde0-b2bb518deb81"> Fifth Attempt Chat</a>            
+        </ul>
     </ul>
+    <p></p>
+        <h3>Conclusion</h3>
+        In the end I believe this experiment to be a success. I was able to examine ChatGPT's ability to create engaging 
+        websites. With enough time, attention, and guidance you can successfully use ChatGPT to create a website. Though the
+        creativity found in such an endeavor may surprise you, I believe it is no real replacement for a Human's touch. 
+        At least, not yet...
+
+        <P>
+        The majority of flaws present in this experiment were that ChatGPT can create a massive amount of variance with it's answers. 
+        Given the same input you may not receive an identical output as I did. 
+        Another limitation is time. A longer time performing the experiment may result in a better outcome as demonstrated
+        above. But there is also the possibility for ChatGPT to forget about past work and re-implement sections 
+        incorrectly. I ran into this issue during the guided first attempt, where I had to re-feed ChatGPT the current 
+        progress.
+        In regards to time, there is the limitation of when this experiment was performed. ChatGPT is ever evolving
+        and learning from the internet and users who use it. This experiment happening over a period of time may have
+        affected the results, it is difficult to know.
+        </P>
+
+        <p>
+            Finally, I feel this experiment has helped me personally too. I have been able to see directly what 
+            contributes to a good looking website. This has helped me in my personal web development goals. I have directly 
+            learned how much can be done with simple vanilla HTML, and that the ever expanding list of libraries aren't 
+            required to make a simple website. Though 
+            there are many glitches, errors, and accessibility issues that arise in ChatGPT generated webpages, 
+            there is also the potential to use it to help speed up production in the workforce, given that there is 
+            always someone looking over what is created. I predict that having Artificial Intelligence models assist
+             in creating websites will be the future in a few years, and am proud to live in such a time of change, 
+             and am excited for what the future in AI has to hold.
+        </p>
+</div>
 
 </body>
 </html>
