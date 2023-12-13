@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Your Name - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+</head>
+
+<style>
+    body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+    }
+
+    header {
+        background-color: #333;
+        color: white;
+        padding: 1em 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+    }
+
+    header h1 {
+        margin: 0;
+        float: left;
+    }
+
+    nav {
+        float: right;
+    }
+
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav li {
+        display: inline-block;
+        margin-left: 20px;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        font-size: 1.2em;
+        transition: color 0.3s;
+    }
+
+    nav a:hover {
+        color: #ffcc00;
+    }
+
+    .container {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    header {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 1em 0;
+    }
+
+    header h1 {
+        margin: 0;
+    }
+
+    header p {
+        margin: 0;
+    }
+
+    section {
+        padding: 3em 0;
+    }
+
+    section h2 {
+        color: #333;
+    }
+
+    .project-card {
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+
+    .project-card:hover {
+        transform: scale(1.05);
+    }
+
+    footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 1em 0;
+    }
+    .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+.fade-in.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #333;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #555;
+}
+</style>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Your Name</h1>
+            <p>Web Developer</p>
+        </div>
+    </header>
+
+    <section id="about" class="fade-in">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Welcome to my portfolio! I'm a passionate web developer with a focus on creating interactive and
+                user-friendly websites.</p>
+        </div>
+    </section>
+
+    <section id="projects" class="fade-in">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="project-card" data-fancybox="gallery" href="project1-full.jpg">
+                <img src="project1-thumbnail.jpg" alt="Project 1">
+                <h3>Project 1</h3>
+            </div>
+            <div class="project-card" data-fancybox="gallery" href="project2-full.jpg">
+                <img src="project2-thumbnail.jpg" alt="Project 2">
+                <h3>Project 2</h3>
+            </div>
+            <!-- Add more project cards as needed -->
+        </div>
+    </section>
+
+    <section id="contact" class="fade-in">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>Feel free to reach out to me via email at <a href="mailto:your.email@example.com">your.email@example.com</a>.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container"class="fade-in">
+            <p>&copy; 2023 Your Name. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeProjectModal()">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+            <!-- Add more project details as needed -->
+        </div>
+    </div>
+
+
+    <section id="contact" class="fade-in">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form id="contactForm" action="#" method="post">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required>
+    
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" required>
+    
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+    
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+</body>
+
+<script>
+    function showProjectDetails(projectId) {
+        // Implement logic to show project details or link to the project page
+        console.log(`Clicked on ${projectId}`);
+    }
+    function showProjectDetails(projectId) {
+    // Replace these with your actual project details
+    const projectDetails = {
+        project1: {
+            title: "Project 1",
+            description: "Description for Project 1."
+        },
+        project2: {
+            title: "Project 2",
+            description: "Description for Project 2."
+        }
+        // Add more project details as needed
+    };
+
+    const modalTitle = document.getElementById("modalTitle");
+    const modalDescription = document.getElementById("modalDescription");
+
+    modalTitle.textContent = projectDetails[projectId].title;
+    modalDescription.textContent = projectDetails[projectId].description;
+
+    const modal = document.getElementById("projectModal");
+    modal.style.display = "block";
+    }
+
+    function closeProjectModal() {
+        const modal = document.getElementById("projectModal");
+        modal.style.display = "none";
+    }
+
+    // Close modal if clicked outside the modal content
+    window.onclick = function(event) {
+        const modal = document.getElementById("projectModal");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
+
+    function showProjectDetails(projectId) {
+        // ... existing code ...
+
+        const modal = document.getElementById("projectModal");
+        modal.style.display = "block";
+
+        // Scroll to the top of the modal
+        modal.scrollTop = 0;
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const sections = document.querySelectorAll(".fade-in");
+
+        const fadeInObserver = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("active");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { rootMargin: "0px 0px -50px 0px" });
+
+        sections.forEach(function (section) {
+            fadeInObserver.observe(section);
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        // ... existing code ...
+
+        // Initialize Fancybox for project gallery
+        $("[data-fancybox]").fancybox({
+            animationEffect: "zoom-in-out",
+            transitionEffect: "slide",
+            thumbs: {
+                autoStart: true,
+                axis: "x"
+            }
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        // ... existing code ...
+
+        // Form submission handling
+        const contactForm = document.getElementById("contactForm");
+        contactForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // Replace this with your actual form submission logic
+            alert("Form submitted! (This is a placeholder)");
+            contactForm.reset();
+        });
+    });
+</script>
+</html>
