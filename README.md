@@ -8,3 +8,5 @@ As the attempts continue the guidance offered to ChatGPT went down. With each at
 clean and a fresh chat was started. The idea of this is that there is no bias of ChatGPT due to previous chat 
 ideas. However, this is not truely the case as ChatGPT is constantly taking in infomation from its userbase. 
 With this in mind we may be able to see how ChatGPT could have improved over time.
+
+The Websites created by ChatGPT were then examined and tested using the [WAVE Web Accessibility Evaluation Tools](https://wave.webaim.org/)
