@@ -1,5 +1,5 @@
 ## ChatGPT Website Expiriment
-By: Cadence King - cak0210   
+By: Cadence King  
 Hosting: https://cadence-king.github.io/   
 
 The purpose of this expiriment is to see how well ChatGPT does in creating a basic 'vanilla' HTML website.   
